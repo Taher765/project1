@@ -17,26 +17,50 @@ body {
   --gold-color: #9d7328;
 }
 
+/* navigation-section =======> Global */
 
-.nav{
+
+/* START NAVBAR  ======> Dashboard */
+.navbar-section{
   background-color: #338e3f;
+  width: 100%;
+  box-shadow:black 0px 1px 10px 10px ;
+  color: #fff;
+  font-size: 20px ;
+  text-transform: capitalize;
   position: absolute;
   top: 0;
-  padding: 0 30px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  z-index: 999;
+}
+.navbar-section nav {
   height: 80px;
-  box-shadow:black 0px 1px 20px 10px ;
-  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 0;
 }
 
-.nav .logo{
-  width: 180px;
-  height: 80px;
-  justify-content: center;
+.navbar-section nav .welcome {
+
 }
+.navbar-section nav .logo{
+  
+}
+
+
+.navbar-section nav .btn-logout{
+  transform: rotate(180deg);
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+  transition: .1s;
+}
+
+.navbar-section nav .btn-logout:hover {
+  color: var(--gold-color)
+} 
+
+/* END NAVBAR */
 
 .succes-border {
   border-color: green !important;

@@ -3,6 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/all.min.css" />
     <link rel="stylesheet" href="css/global.css" />
@@ -10,62 +15,155 @@
     <title>لقمتي</title>
   </head>
   <body>
-    <div class="nav">
-      <!-- Wellcome Div -->
-      <div class="text-center welcome" id="welcome">
-        <span>Wellcome</span>
-      </div>
-      <!-- Logo -->
-      <div class="logo">
-        <img src="images/Logo.svg" alt="" />
-      </div>
-      <div class="btn-logout">
-        <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
+    <div class="navbar-section">
+      <div class="container">
+        <nav>
+          <!-- Wellcome Div -->
+          <div class="welcome" id="welcome">
+            <span>Wellcome</span>
+          </div>
+          <!-- Logo -->
+          <div class="logo">LOGO</div>
+          <!-- Logout  -->
+          <div class="btn-logout">
+            <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
+          </div>
+        </nav>
       </div>
     </div>
 
     <!-- Start Address -->
-    <div class="address d-flex align-items-center justify-content-center">
+    <div class="address">
       <div class="container">
-        <div class="form p-2 w-75">
-          <div class="title-section decoration text-center mb-5">
-            <p>من فضلك قم بتحديد موقعك للعثور على المخابز القريبه منك :</p>
-          </div>
-          <div class="address-form">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="form-group d-flex align-items-center mb-3">
-                  <label for="">المحافظة :</label>
-                  <input type="text" id="city" class="form-control" />
+        <div
+          class="global-section d-flex align-items-center justify-content-center"
+        >
+          <div>
+            <div class="p-2 w-100">
+              <div class="title-section decoration text-center mb-5">
+                <p>من فضلك قم بتحديد موقعك للعثور على المخابز القريبه منك :</p>
+              </div>
+              <div class="address-form">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div
+                      class="form-group gap-2 d-flex align-items-center mb-3"
+                    >
+                      <label for="">المحافظة:</label>
+                      <input type="text" id="city" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="form-group gap-2 d-flex align-items-center mb-3"
+                    >
+                      <label for=""> المركز:</label>
+                      <input type="text" id="village" class="form-control" />
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div
+                      class="form-group gap-2 d-flex align-items-center mb-3"
+                    >
+                      <label for=""> القرية:</label>
+                      <input type="text" id="areaZone" class="form-control" />
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="col-md-4">
-                <div class="form-group d-flex align-items-center mb-3">
-                  <label for=""> المركز :</label>
-                  <input type="text" id="village" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="form-group d-flex align-items-center mb-3">
-                  <label for=""> القرية :</label>
-                  <input type="text" id="areaZone" class="form-control" />
-                </div>
-              </div>
+              <button class="btn" id="next">التالي</button>
             </div>
           </div>
-          <button class="btn" id="next">التالي</button>
         </div>
-        <!-- End Address -->
+
+        <!-- Start Bakeries Section -->
+
+        <!-- الافران لسه هتتعمل ديناميك -->
+        <div class="bakery-section" id="bakery-section">
+          <div class="container">
+            <div class="swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <div
+                    class="d-flex h-100 align-items-center justify-content-center"
+                  >
+                    <div class="text-center">
+                      <h4>اسم صاحب الفرن</h4>
+                      <h5>القريه</h5>
+                      <button class="btn">دخول</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="d-flex h-100 align-items-center justify-content-center"
+                  >
+                    <div class="text-center">
+                      <h4>اسم صاحب الفرن</h4>
+                      <h5>القريه</h5>
+                      <button class="btn">دخول</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="d-flex h-100 align-items-center justify-content-center"
+                  >
+                    <div class="text-center">
+                      <h4>اسم صاحب الفرن</h4>
+                      <h5>القريه</h5>
+                      <button class="btn">دخول</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="d-flex h-100 align-items-center justify-content-center"
+                  >
+                    <div class="text-center">
+                      <h4>اسم صاحب الفرن</h4>
+                      <h5>القريه</h5>
+                      <button class="btn">دخول</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="d-flex h-100 align-items-center justify-content-center"
+                  >
+                    <div class="text-center">
+                      <h4>اسم صاحب الفرن</h4>
+                      <h5>القريه</h5>
+                      <button class="btn">دخول</button>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div
+                    class="d-flex h-100 align-items-center justify-content-center"
+                  >
+                    <div class="text-center">
+                      <h4>اسم صاحب الفرن</h4>
+                      <h5>القريه</h5>
+                      <button class="btn">دخول</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="swiper-button-next"></div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End Bakeries Section -->
       </div>
-      <!-- Start Bakeries Section -->
-      <div class="bakery-section" id="bakery-section">
-        <div class="bakery"></div>
-        <div class="bakery"></div>
-        <div class="bakery"></div>
-        <div class="bakery"></div>
-      </div>
-      <!-- End Bakeries Section -->
     </div>
+
+    <!-- End Address -->
+
+    <!-- Start Swiper Slider lib  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- Start Swet Alert lib -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>

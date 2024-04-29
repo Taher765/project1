@@ -1,67 +1,15 @@
-
-.nav{
-  background-color: #338e3f;
-  position: absolute;
-  top: 0;
-  padding: 0 30px;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-  box-shadow:black 0px 1px 20px 10px ;
-  z-index: 2;
-  
-}
-
-.nav .welcome{
-  height: 80px;
-  line-height: 80px;
-  text-align: center;
-  color: #fff;
-  font-size: 22px;
-  width: 20%;
-}
-.nav .logo{
-  width: 180px;
-  height: 80px;
-
-}
-.nav .logo img{
-  width: 100%;
-
-}
-.nav .btn-logout{
-  transform: rotate(180deg);
-  width: 20%;
-  height: 60px; 
-  line-height: 60px;
-  font-size: 25px;
-  color: #fff;
-  text-align: center;
-}
-.nav .btn-logout i{
-  cursor: pointer;
-
-}
-.nav .btn-logout i:hover {
-  color: var(--gold-color)
-}
-
 .address {
-  height: 100vh;
+  min-height: 100vh;
   background-image: url("../images/BG.jpg");
   background-size: cover;
   background-position: center;
-  position: relative;
-}
-.address .form{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
+  overflow: hidden;
 }
 
+.address .global-section {
+  height: 80vh;
+  padding-top: 130px;
+}
 
 .address .title-section {
   font-weight: 600;
@@ -70,7 +18,7 @@
 }
 
 .address .form-group label {
-  width: 120px;
+  width: 100px;
   color: #fff;
   font-weight: 600;
 }
@@ -87,23 +35,16 @@
   color: var(--gold-color);
 }
 
-
-
 .bakery-section {
-  display: flex ;
-  position: absolute;
-  left: 50%;
-  transform: translate(-50%);
-  bottom: 30px;
-  width: 0px;
-  height: 180px;
-  transition: 1s;
-  gap: 5px;
-  align-items: center;
-  justify-content: center;
+  margin-bottom: 20px;
+  cursor: pointer;
 }
-.bakery-section .bakery {
-  width: 170px;
-  height: 170px;
-  background-color: #fff;
+.bakery-section .swiper .swiper-wrapper .swiper-slide {
+  height: 180px;
+  background-color: #c3982ac4;
+  border-radius: 10px;
+  color: #fff
+}
+.bakery-section-h {
+  display: none;
 }
