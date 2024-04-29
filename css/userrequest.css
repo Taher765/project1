@@ -1,0 +1,56 @@
+.nav{
+    background-color: #338e3f;
+    position: absolute;
+    top: 0;
+    padding: 0 30px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    box-shadow:black 0px 1px 20px 10px ;
+    z-index: 2;
+    
+  }
+  
+  .nav .welcome{
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    color: #fff;
+    font-size: 22px;
+    width: 20%;
+  }
+  .nav .logo{
+    width: 180px;
+    height: 80px;
+  
+  }
+  .nav .logo img{
+    width: 100%;
+  
+  }
+  .nav .btn-logout{
+    transform: rotate(180deg);
+    width: 20%;
+    height: 60px; 
+    line-height: 60px;
+    font-size: 25px;
+    color: #fff;
+    text-align: center;
+  }
+  .nav .btn-logout i{
+    cursor: pointer;
+  
+  }
+  .nav .btn-logout i:hover {
+    color: var(--gold-color)
+  }
+  
+.landing {
+    height: 100vh;
+    background-image: url("../images/BG.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }

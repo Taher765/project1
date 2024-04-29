@@ -1,0 +1,39 @@
+
+
+.register {
+    height: 100vh;
+    background-image: url("../images/BG.jpg");
+    background-size: cover;
+    background-position: center;
+  }
+  .register #errorDiv {
+  
+    display: none;
+    color: red
+  }
+  .register .title-section {
+    position: relative;
+  }
+  .register .title-section h2 {
+    color: #fff;
+  }
+  .register .form {
+    margin-top: 100px;
+  }
+  
+  .register .form-group label {
+    width: 200px;
+  }
+  
+  .btn {
+    border: 1px solid #000;
+    width: fit-content;
+    display: block;
+    margin: 30px auto;
+    padding: 10px 30px;
+  }
+  .btn:hover {
+    background-color: #000;
+    color: var(--gold-color);
+  }
+  

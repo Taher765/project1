@@ -1,0 +1,136 @@
+/* Start Home */
+.home {
+  background-image: url("../images/homebackground.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
+.home .logo {
+  position: absolute;
+  width: 25%;
+  left: 0;
+  top: 10px;
+}
+.home .info {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+}
+.icon{
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate( -50%);
+  line-height: 40px;
+  text-align: center;
+  font-size: 22px;
+}
+.icon a{
+  transition: .3s;
+  color: #000;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+.icon:hover a{
+  background-color: black;
+  color: var(--gold-color);
+  border: 1px solid black;
+
+}
+@media (max-width: 768px) {
+  .home .info {
+    width: 100%;
+    font-size: 18px;
+  }
+}
+.home .text p {
+  margin: 0;
+}
+.home .register .btn {
+  border: 1px solid #000;
+  min-width: 100px;
+  margin: 10px 5px;
+}
+.home .register .btn:hover {
+  background-color: #000;
+  color: var(--gold-color);
+}
+
+/* End Home  */
+
+/* Start Serveses */
+
+
+.serveses .title {
+  position: relative;
+}
+.serveses .title:after,
+.serveses .title::before {
+  content: "";
+  position: absolute;
+}
+.serveses .title:after {
+  bottom: -15px;
+  left: 50%;
+  transform: translatex(-50%);
+  border-radius: 5px;
+  height: 3px;
+  width: 120px;
+  background-color: var(--gold-color);
+}
+.serveses .title::before {
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  height: 15px;
+  width: 15px;
+  border: 3px solid var(--gold-color);
+  background-color: #fff;
+  z-index: 22;
+}
+.serveses img {
+  border-radius: 10%;
+}
+.serveses .servese {
+  cursor: pointer;
+}
+.serveses .text-info {
+  display: none;
+}
+.serveses .text-info.serv-active {
+  display: block;
+}
+.serveses .container .text-info {
+  margin-top: 80px;
+  padding: 30px;
+  height: fit-content;
+  color: #000 !important;
+  line-height: 60px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+}
+.serveses .container .text-info ul {
+  list-style: none;
+}
+.serveses .container .servese {
+  transition: 0.3s;
+}
+
+.serveses .container .servese:hover {
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.25) 5px 5px 15px -5px;
+}
+
+/* End Serveses */
+/* Start Footer */
+
+/* End Footer */

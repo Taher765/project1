@@ -1,0 +1,28 @@
+
+.login {
+  height: 100vh;
+  background-image: url("../images/BG.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.login .title-section h2 {
+  color: #fff;
+}
+.login .title-section{
+  position: relative;
+}
+
+.login .form-group label {
+  width: 120px;
+}
+.btn {
+  border: 1px solid #000;
+  width: fit-content;
+  display: block;
+  padding: 10px 30px;
+  margin: 30px auto;
+}
+.btn:hover {
+  background-color: #000;
+  color: var(--gold-color);
+}

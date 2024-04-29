@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <title>لقمتي</title>
+  </head>
+  <body>
+    <div class="nav">
+      <!-- Wellcome Div -->
+      <div class="text-center welcome" id="welcome">
+        <span>Wellcome</span>
+      </div>
+      <!-- Logo -->
+      <div class="logo">
+        <img src="images/Logo.svg" alt="" />
+      </div>
+      <div class="btn-logout">
+        <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
+      </div>
+    </div>
+
+    <!-- Start Address -->
+    <div class="address d-flex align-items-center justify-content-center">
+      <div class="container">
+        <div class="form p-2 w-75">
+          <div class="title-section decoration text-center mb-5">
+            <p>من فضلك قم بتحديد موقعك للعثور على المخابز القريبه منك :</p>
+          </div>
+          <div class="address-form">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="form-group d-flex align-items-center mb-3">
+                  <label for="">المحافظة :</label>
+                  <input type="text" id="city" class="form-control" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group d-flex align-items-center mb-3">
+                  <label for=""> المركز :</label>
+                  <input type="text" id="village" class="form-control" />
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="form-group d-flex align-items-center mb-3">
+                  <label for=""> القرية :</label>
+                  <input type="text" id="areaZone" class="form-control" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="btn" id="next">التالي</button>
+        </div>
+        <!-- End Address -->
+      </div>
+      <!-- Start Bakeries Section -->
+      <div class="bakery-section" id="bakery-section">
+        <div class="bakery"></div>
+        <div class="bakery"></div>
+        <div class="bakery"></div>
+        <div class="bakery"></div>
+      </div>
+      <!-- End Bakeries Section -->
+    </div>
+
+    <!-- Start Swet Alert lib -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- End Swet Alert -->
+    <script src="js/dashboard.js"></script>
+  </body>
+</html>
