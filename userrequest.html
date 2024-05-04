@@ -25,13 +25,53 @@
       </div>
       <!-- Logo -->
       <div class="logo">
-        <img src="images/Logo.svg" alt="" />
+        LOGO
       </div>
       <div class="btn-logout">
         <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
       </div>
     </div>
+
     <!-- Start Landing -->
-    <div class="landing">النافبار هنا لسه هيتعدل</div>
+    <div class="landing">
+
+
+      <div class="container">
+
+
+        <div class="bakery-data" >
+          <div id="owner">الاسم : <span> name </span></div>
+          <div id="address">العنوان : <span> adrress </span></div>
+          <div >الحالة : <span> متاح </span></div>
+        </div>
+
+        <div class="request">
+          <form class="form p-2">
+            <div class="form-group">
+              <div class="form-group d-flex align-items-center mb-3">
+                <label for="">  الوقت:</label>
+                <div class="date" >
+                <input type="number" id="hours" class="form-control" placeholder="00" />
+                <span> : </span>
+                <input type="number" id="minutes" class="form-control" placeholder="00" />
+                </div>
+              </div>
+              <div class="form-group d-flex align-items-center mb-3">
+                <label for=""> الكمية :</label>
+                <input type="number" id="count" class="form-control" placeholder=" عدد الارغفه المطلوبة " />
+              </div>
+            </div>
+            <button class="btn btn-register" >ارسال الطلب</a>
+          </form>
+        </div>
+
+
+        
+      </div>
+    </div>
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/userrequest.js"></script>
   </body>
 </html>

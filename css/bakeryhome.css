@@ -1,0 +1,7 @@
+.landing {
+    height: 100vh;
+    background-image: url("../images/BG.jpg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+  }

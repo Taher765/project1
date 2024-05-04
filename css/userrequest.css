@@ -22,13 +22,7 @@
     width: 20%;
   }
   .nav .logo{
-    width: 180px;
-    height: 80px;
-  
-  }
-  .nav .logo img{
-    width: 100%;
-  
+    color: #fff;
   }
   .nav .btn-logout{
     transform: rotate(180deg);
@@ -54,3 +48,47 @@
     background-position: center;
     position: relative;
   }
+.landing .container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 80px;
+}
+
+.landing .container .bakery-data{
+  height: 30vh;
+  line-height: 40px;
+  padding-top:30px  ;
+  font-size: 24px;
+}
+
+.landing .container .request{
+  height: 55vh;
+  padding-top: 50px ;
+}
+
+.date {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+}
+.landing .container .request .form-group {
+  width: 80%;
+  margin: auto;
+}
+.landing .container .request .form-group label {
+  width: 120px;
+}
+
+.btn {
+  border: 1px solid #000;
+  width: fit-content;
+  display: block;
+  margin: 30px auto;
+  padding: 10px 30px;
+}
+.btn:hover {
+  background-color: #000;
+  color: var(--gold-color);
+}

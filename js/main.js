@@ -5,7 +5,7 @@ const loading = document.querySelector(".loading");
 addEventListener("DOMContentLoaded", () => {
   setTimeout(() => {
     loading.classList.add("hidden");
-  }, 2500);
+  }, 500);
 });
 
 // Show Div Info Serv
