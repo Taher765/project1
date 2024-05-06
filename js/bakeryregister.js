@@ -129,6 +129,14 @@ function register(e) {
         bakeryZone: bakeryZone.value,
       },
       nearbyPlace: nearbyPlace.value,
+
+      requsets: [
+        {
+          nameReq: "علي ابوزيد ",
+          num: "10",
+          city: "ابوغنيمه",
+        },
+      ],
     };
     bakeryData.push(bakeryObj);
     localStorage.setItem("bakeryData", JSON.stringify(bakeryData));

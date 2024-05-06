@@ -6,9 +6,11 @@ let bakerySection = document.getElementById("bakery-section");
 
 let welcomeMessege = document.querySelector(".welcome span");
 let btnLogout = document.getElementById("btnLogout");
+let bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
 
 // Welcome Messege
 addEventListener("load", () => {
+  displayInputs();
   let name = localStorage.getItem("loginData");
   if (name != null) {
     welcomeMessege.innerHTML = `مرحبا ${name.split(" ")[0]}`;
@@ -26,10 +28,54 @@ document.addEventListener("click", (e) => {
   }
 });
 
+// ملئ المدخلات دينميك
+function displayInputs() {
+  bakeryData.forEach((item) => {
+    console.log(item.address);
+    city.innerHTML += `<option value="${item.address.bakeryCity}">${item.address.bakeryCity}</option>`;
+    village.innerHTML += `<option value="${item.address.bakeryVillage}">${item.address.bakeryVillage}</option>`;
+    areaZone.innerHTML += `<option value="${item.address.bakeryZone}">${item.address.bakeryZone}</option>`;
+  });
+}
+
 //  functions bakerySection
-next.addEventListener("click", () => {
-  bakerySection.classList.toggle("bakery-section-h");
-});
+// next.addEventListener("click", displayBakerys);
+areaZone.addEventListener("change", displayBakerys);
+
+function displayBakerys() {
+  let content = ``;
+
+  bakeryData.forEach((bakery) => {
+    if (areaZone.value == bakery.address.bakeryZone) {
+      content += `
+      <div class="swiper-slide">
+    <div
+      class="d-flex h-100 align-items-center justify-content-center"
+    >
+      <div class="text-center">
+        <h4>${bakery.bakeryOwner}</h4>
+        <h5>${bakery.address.bakeryCity} / ${bakery.address.bakeryVillage} / ${bakery.address.bakeryZone}</h5>
+        <span> بجوار ${bakery.nearbyPlace}</span>
+        <a href="userrequest.html"
+          ><button class="btn">دخول</button></a
+        >
+      </div>
+    </div>
+  </div>
+      `;
+    } else {
+      document.querySelector(".swiper-wrapper").innerHTML = "";
+    }
+    document.querySelector(".swiper-wrapper").innerHTML = content;
+
+    // document.querySelector(".swiper-slide").classList.add("bakery-section-h");
+    // if (areaZone.value != bakery.address.bakeryZone) {
+    //   console.log("Not Nound");
+    // } else {
+    //   document.querySelector(".swiper-wrapper").innerHTML = content;
+    // }
+  });
+}
 
 // Start Swiper Slider
 

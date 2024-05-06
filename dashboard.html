@@ -50,7 +50,11 @@
                       class="form-group gap-2 d-flex align-items-center mb-3"
                     >
                       <label for="">المحافظة:</label>
-                      <input type="text" id="city" class="form-control" />
+                      <select class="form-control" id="city">
+                        <option value="اختار محافظه" selected>
+                          اختار محافظه
+                        </option>
+                      </select>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -58,7 +62,9 @@
                       class="form-group gap-2 d-flex align-items-center mb-3"
                     >
                       <label for=""> المركز:</label>
-                      <input type="text" id="village" class="form-control" />
+                      <select id="village" class="form-control">
+                        <option value="اختار مركز" selected>اختار مركز</option>
+                      </select>
                     </div>
                   </div>
                   <div class="col-md-4">
@@ -66,7 +72,9 @@
                       class="form-group gap-2 d-flex align-items-center mb-3"
                     >
                       <label for=""> القرية:</label>
-                      <input type="text" id="areaZone" class="form-control" />
+                      <select class="form-control" id="areaZone">
+                        <option value="اختار قرية">اختار قرية</option>
+                      </select>
                     </div>
                   </div>
                 </div>
@@ -79,89 +87,10 @@
         <!-- Start Bakeries Section -->
 
         <!-- الافران لسه هتتعمل ديناميك -->
-        <div class="bakery-section bakery-section-h" id="bakery-section">
+        <div class="bakery-section" id="bakery-section">
           <div class="container">
             <div class="swiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                  <div
-                    class="d-flex h-100 align-items-center justify-content-center"
-                  >
-                    <div class="text-center">
-                      <h4>اسم صاحب الفرن</h4>
-                      <h5>القريه</h5>
-                      <a href="userrequest.html"
-                        ><button class="btn">دخول</button></a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="d-flex h-100 align-items-center justify-content-center"
-                  >
-                    <div class="text-center">
-                      <h4>اسم صاحب الفرن</h4>
-                      <h5>القريه</h5>
-                      <a href="userrequest.html"
-                        ><button class="btn">دخول</button></a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="d-flex h-100 align-items-center justify-content-center"
-                  >
-                    <div class="text-center">
-                      <h4>اسم صاحب الفرن</h4>
-                      <h5>القريه</h5>
-                      <a href="userrequest.html"
-                        ><button class="btn">دخول</button></a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="d-flex h-100 align-items-center justify-content-center"
-                  >
-                    <div class="text-center">
-                      <h4>اسم صاحب الفرن</h4>
-                      <h5>القريه</h5>
-                      <a href="userrequest.html"
-                        ><button class="btn">دخول</button></a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="d-flex h-100 align-items-center justify-content-center"
-                  >
-                    <div class="text-center">
-                      <h4>اسم صاحب الفرن</h4>
-                      <h5>القريه</h5>
-                      <a href="userrequest.html"
-                        ><button class="btn">دخول</button></a
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="swiper-slide">
-                  <div
-                    class="d-flex h-100 align-items-center justify-content-center"
-                  >
-                    <div class="text-center">
-                      <h4>اسم صاحب الفرن</h4>
-                      <h5>القريه</h5>
-                      <a href="userrequest.html"
-                        ><button class="btn">دخول</button></a
-                      >
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <div class="swiper-wrapper"></div>
               <div class="swiper-button-next"></div>
               <div class="swiper-button-prev"></div>
               <div class="swiper-pagination"></div>
