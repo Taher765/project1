@@ -26,7 +26,12 @@
           <div class="logo">LOGO</div>
           <!-- Logout  -->
           <div class="btn-logout">
-            <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
+            <a href="index.html"
+              ><i
+                id="btnLogout"
+                class="fa-solid fa-arrow-right-from-bracket"
+              ></i
+            ></a>
           </div>
         </nav>
       </div>
@@ -51,7 +56,7 @@
                     >
                       <label for="">المحافظة:</label>
                       <select class="form-control" id="city">
-                        <option value="اختار محافظه" selected>
+                        <option value="اختار محافظه" selected hidden>
                           اختار محافظه
                         </option>
                       </select>
@@ -63,7 +68,9 @@
                     >
                       <label for=""> المركز:</label>
                       <select id="village" class="form-control">
-                        <option value="اختار مركز" selected>اختار مركز</option>
+                        <option value="اختار مركز" selected hidden>
+                          اختار مركز
+                        </option>
                       </select>
                     </div>
                   </div>
@@ -73,7 +80,9 @@
                     >
                       <label for=""> القرية:</label>
                       <select class="form-control" id="areaZone">
-                        <option value="اختار قرية">اختار قرية</option>
+                        <option value="اختار قرية" selected hidden>
+                          اختار قرية
+                        </option>
                       </select>
                     </div>
                   </div>

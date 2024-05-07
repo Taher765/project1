@@ -28,7 +28,7 @@ body {
   color: #fff;
   font-size: 20px ;
   text-transform: capitalize;
-  position: absolute;
+  position: fixed;
   top: 0;
   z-index: 999;
 }
@@ -48,7 +48,7 @@ body {
 }
 
 
-.navbar-section nav .btn-logout{
+.navbar-section nav .btn-logout {
   transform: rotate(180deg);
   font-size: 25px;
   color: #fff;
@@ -56,7 +56,7 @@ body {
   transition: .1s;
 }
 
-.navbar-section nav .btn-logout:hover {
+.navbar-section nav .btn-logout:hover a{
   color: var(--gold-color)
 } 
 
@@ -144,4 +144,9 @@ transition: .75s;
 .hidden {
   visibility: hidden;
   opacity: 0;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+
 }

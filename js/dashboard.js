@@ -17,6 +17,11 @@ addEventListener("load", () => {
   } else {
     window.location = "login.html";
   }
+  if (localStorage.getItem("bakeryData") != null) {
+    bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
+  } else {
+    bakeryData = [];
+  }
 });
 
 // Logout Function
@@ -30,84 +35,94 @@ document.addEventListener("click", (e) => {
 
 // ملئ المدخلات دينميك
 function displayInputs() {
+  let inputbakeryCity = [];
+  let inputbakeryVillage = [];
+  let inputbakeryZone = [];
   bakeryData.forEach((item) => {
-    console.log(item.address);
-    city.innerHTML += `<option value="${item.address.bakeryCity}">${item.address.bakeryCity}</option>`;
-    village.innerHTML += `<option value="${item.address.bakeryVillage}">${item.address.bakeryVillage}</option>`;
-    areaZone.innerHTML += `<option value="${item.address.bakeryZone}">${item.address.bakeryZone}</option>`;
+    inputbakeryCity.push(item.address.bakeryCity);
+    inputbakeryVillage.push(item.address.bakeryVillage);
+    inputbakeryZone.push(item.address.bakeryZone);
+  });
+  let inputbakeryCityArr = new Set(inputbakeryCity);
+  let inputbakeryVillageArr = new Set(inputbakeryVillage);
+  let inputbakeryZoneArr = new Set(inputbakeryZone);
+  inputbakeryCityArr.forEach((item) => {
+    city.innerHTML += `<option value="${item}">${item}</option>`;
+  });
+  inputbakeryVillageArr.forEach((item) => {
+    village.innerHTML += `<option value="${item}">${item}</option>`;
+  });
+  inputbakeryZoneArr.forEach((item) => {
+    areaZone.innerHTML += `<option value="${item}">${item}</option>`;
   });
 }
 
 //  functions bakerySection
-// next.addEventListener("click", displayBakerys);
-areaZone.addEventListener("change", displayBakerys);
+next.addEventListener("click", displayBakerys);
+// areaZone.addEventListener("change", displayBakerys);
 
 function displayBakerys() {
   let content = ``;
 
-  bakeryData.forEach((bakery) => {
+  bakeryData.forEach((bakery, index) => {
     if (areaZone.value == bakery.address.bakeryZone) {
       content += `
-      <div class="swiper-slide">
-    <div
-      class="d-flex h-100 align-items-center justify-content-center"
-    >
-      <div class="text-center">
-        <h4>${bakery.bakeryOwner}</h4>
-        <h5>${bakery.address.bakeryCity} / ${bakery.address.bakeryVillage} / ${bakery.address.bakeryZone}</h5>
-        <span> بجوار ${bakery.nearbyPlace}</span>
-        <a href="userrequest.html"
-          ><button class="btn">دخول</button></a
-        >
-      </div>
-    </div>
-  </div>
+          <div class="swiper-slide">
+            <div
+              class="d-flex h-100 align-items-center justify-content-center"
+            >
+              <div class="text-center">
+                <h4>${bakery.bakeryOwner}</h4>
+                <h5>${bakery.address.bakeryCity} / ${bakery.address.bakeryVillage} / ${bakery.address.bakeryZone}</h5>
+                <span> بجوار ${bakery.nearbyPlace}</span>
+                    <button class="btn" onclick="loginBakrey(${index})">دخول</button>
+              </div>
+            </div>
+          </div>
       `;
     } else {
       document.querySelector(".swiper-wrapper").innerHTML = "";
     }
-    document.querySelector(".swiper-wrapper").innerHTML = content;
+  });
 
-    // document.querySelector(".swiper-slide").classList.add("bakery-section-h");
-    // if (areaZone.value != bakery.address.bakeryZone) {
-    //   console.log("Not Nound");
-    // } else {
-    //   document.querySelector(".swiper-wrapper").innerHTML = content;
-    // }
+  document.querySelector(".swiper-wrapper").innerHTML = content;
+  // Start Swiper Slider
+
+  const swiper = new Swiper(".swiper", {
+    loop: false,
+    spaceBetween: 10,
+    pagination: {
+      el: ".swiper-pagination",
+    },
+
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+      },
+      480: {
+        slidesPerView: 2,
+        spaceBetween: 30,
+      },
+      640: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+
+      991: {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+    },
   });
 }
 
-// Start Swiper Slider
-
-const swiper = new Swiper(".swiper", {
-  loop: true,
-  spaceBetween: 10,
-  pagination: {
-    el: ".swiper-pagination",
-  },
-
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
-
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-      spaceBetween: 20,
-    },
-    480: {
-      slidesPerView: 2,
-      spaceBetween: 30,
-    },
-    640: {
-      slidesPerView: 2,
-      spaceBetween: 40,
-    },
-
-    991: {
-      slidesPerView: 4,
-      spaceBetween: 40,
-    },
-  },
-});
+function loginBakrey(bakeryIndex) {
+  localStorage.setItem("bakeryIndex", JSON.stringify(bakeryData[bakeryIndex]));
+  window.location = "userrequest.html";
+}

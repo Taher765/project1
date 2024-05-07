@@ -28,7 +28,12 @@
         LOGO
       </div>
       <div class="btn-logout">
-        <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
+        <a href="index.html"
+          ><i
+            id="btnLogout"
+            class="fa-solid fa-arrow-right-from-bracket"
+          ></i
+        ></a>
       </div>
     </div>
 
@@ -42,18 +47,17 @@
         <div class="bakery-data" >
           <div id="owner">الاسم : <span> name </span></div>
           <div id="address">العنوان : <span> adrress </span></div>
-          <div >الحالة : <span> متاح </span></div>
+          <div class="state">الحالة : <span>  </span></div>
         </div>
 
         <div class="request">
-          <form class="form p-2">
+          <div class="form p-2">
             <div class="form-group">
               <div class="form-group d-flex align-items-center mb-3">
                 <label for="">  الوقت:</label>
                 <div class="date" >
-                <input type="number" id="hours" class="form-control" placeholder="00" />
-                <span> : </span>
-                <input type="number" id="minutes" class="form-control" placeholder="00" />
+                <input type="time" id="hours" class="form-control" placeholder="00" />
+               
                 </div>
               </div>
               <div class="form-group d-flex align-items-center mb-3">
@@ -70,7 +74,9 @@
       </div>
     </div>
 
-
+  <!-- Start Swet Alert lib -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- End Swet Alert -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/userrequest.js"></script>
   </body>

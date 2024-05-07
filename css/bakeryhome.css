@@ -1,7 +1,52 @@
 .landing {
-    height: 100vh;
+    min-height: 110vh;
     background-image: url("../images/BG.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
+  }
+  .landing .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0 , .5);
+
+  }
+  .container {
+    position: relative;
+  }
+
+  .landing .table-responsive  {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 400px;
+  }
+  .landing .table-responsive .table {
+   vertical-align: middle;
+    background-color: transparent !important;
+    overflow-y: auto;
+  }
+  .landing .table-responsive .table tr {
+    background-color: transparent !important;
+    
+
+  }
+  .landing .table-responsive .table tr th {
+    background-color: transparent !important;
+    font-size: 20px;
+    color: #fff !important
+
+  }
+  .landing .table-responsive .table tr td {
+    background-color: transparent !important;
+    color: #fff !important
+    ;
+    font-size: 18px;
+    font-weight: 500;
+
+
   }

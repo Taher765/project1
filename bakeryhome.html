@@ -26,15 +26,42 @@
           <div class="logo">LOGO</div>
           <!-- Logout  -->
           <div class="btn-logout">
-            <i id="btnLogout" class="fa-solid fa-arrow-right-from-bracket"></i>
+            <a href="index.html"
+              ><i
+                id="btnLogout"
+                class="fa-solid fa-arrow-right-from-bracket"
+              ></i
+            ></a>
           </div>
         </nav>
       </div>
     </div>
 
     <div class="landing">
-      <div class="container"></div>
+      <div class="overlay">
+        <div class="container">
+          <div class="table-responsive w-100">
+            <table class="table table-hover border text-center rounded">
+              <thead class="border-4">
+                <tr class="border">
+                  <th class="border">#</th>
+                  <th class="border">الاسم</th>
+                  <th class="border">عدد الخبز</th>
+                  <th class="border">الساعه</th>
+                  <th class="border">قبول / رفض</th>
+                </tr>
+              </thead>
+              <tbody id="tableBody" class="border-4">
+                <!-- Date Hare -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
+    <!-- Start Swet Alert lib -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- End Swet Alert -->
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/bakeryhome.js"></script>
   </body>

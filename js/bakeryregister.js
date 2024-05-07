@@ -13,6 +13,8 @@ let bakeryData = [];
 addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("bakeryData") != null) {
     bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
+  } else {
+    bakeryData = [];
   }
 });
 
@@ -21,7 +23,7 @@ bakeryOwner.addEventListener("keyup", bakeryOwnerValidation);
 bakeryOwner.addEventListener("blur", bakeryOwnerValidation);
 function bakeryOwnerValidation() {
   if (
-    bakeryOwner.value.length > 5 &&
+    bakeryOwner.value.length > 3 &&
     bakeryOwner.value != "" &&
     bakeryOwner.value.match(regex)
   ) {
@@ -40,7 +42,7 @@ bakeryCity.addEventListener("keyup", bakeryCityValidation);
 bakeryCity.addEventListener("blur", bakeryCityValidation);
 function bakeryCityValidation() {
   if (
-    bakeryCity.value.length > 5 &&
+    bakeryCity.value.length > 3 &&
     bakeryCity.value != "" &&
     bakeryCity.value.match(regex)
   ) {
@@ -58,7 +60,7 @@ bakeryVillage.addEventListener("keyup", bakeryVillageValidation);
 bakeryVillage.addEventListener("blur", bakeryVillageValidation);
 function bakeryVillageValidation() {
   if (
-    bakeryVillage.value.length > 5 &&
+    bakeryVillage.value.length > 3 &&
     bakeryVillage.value != "" &&
     bakeryVillage.value.match(regex)
   ) {
@@ -76,7 +78,7 @@ bakeryZone.addEventListener("keyup", bakeryZoneValidation);
 bakeryZone.addEventListener("blur", bakeryZoneValidation);
 function bakeryZoneValidation() {
   if (
-    bakeryZone.value.length > 5 &&
+    bakeryZone.value.length > 3 &&
     bakeryZone.value != "" &&
     bakeryZone.value.match(regex)
   ) {
@@ -130,16 +132,11 @@ function register(e) {
       },
       nearbyPlace: nearbyPlace.value,
 
-      requsets: [
-        {
-          nameReq: "علي ابوزيد ",
-          num: "10",
-          city: "ابوغنيمه",
-        },
-      ],
+      requsets: bakeryData.requsets ? bakeryData.requsets : [],
     };
     bakeryData.push(bakeryObj);
     localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
+    localStorage.setItem("owner", JSON.stringify(bakeryObj));
     Swal.fire({
       position: "center-center",
       icon: "success",
@@ -147,7 +144,6 @@ function register(e) {
       showConfirmButton: false,
       timer: 1500,
     });
-    console.log("ali");
 
     setTimeout(() => {
       window.location = "bakeryhome.html";
