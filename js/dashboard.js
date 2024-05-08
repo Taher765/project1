@@ -122,7 +122,9 @@ function displayBakerys() {
   });
 }
 
+// هنا في تعديدل
+
 function loginBakrey(bakeryIndex) {
-  localStorage.setItem("bakeryIndex", JSON.stringify(bakeryData[bakeryIndex]));
+  localStorage.setItem("bakeryIndex", bakeryIndex);
   window.location = "userrequest.html";
 }

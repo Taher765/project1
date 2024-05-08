@@ -131,12 +131,12 @@ function register(e) {
         bakeryZone: bakeryZone.value,
       },
       nearbyPlace: nearbyPlace.value,
-
-      requsets: bakeryData.requsets ? bakeryData.requsets : [],
+      ///////////
+      reqests: [],
     };
     bakeryData.push(bakeryObj);
     localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
-    localStorage.setItem("owner", JSON.stringify(bakeryObj));
+    // localStorage.setItem("owner", JSON.stringify(bakeryObj));
     Swal.fire({
       position: "center-center",
       icon: "success",

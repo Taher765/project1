@@ -14,6 +14,7 @@ addEventListener("DOMContentLoaded", () => {
 });
 
 numCard.addEventListener("keyup", cardIdValidation);
+numCard.addEventListener("blur", cardIdValidation);
 function cardIdValidation() {
   for (let i = 0; i < usersData.length; i++) {
     if (usersData[i].cardId === numCard.value) {
@@ -31,6 +32,7 @@ function cardIdValidation() {
 }
 
 password.addEventListener("keyup", passwordValidation);
+password.addEventListener("blur", passwordValidation);
 
 function passwordValidation() {
   for (let i = 0; i < usersData.length; i++) {
@@ -49,7 +51,9 @@ function passwordValidation() {
 }
 
 loginBtn.addEventListener("click", loginForm);
-function loginForm() {
+function loginForm(e) {
+  e.preventDefault();
+
   if (numCardFlag && passwordFlag) {
     console.log("Done");
     Swal.fire({

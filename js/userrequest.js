@@ -6,7 +6,8 @@ let clock = 0;
 const time = document.querySelector("#hours");
 const count = document.querySelector("#count");
 const btn = document.querySelector(".btn");
-let bakeryOwnerInfo = JSON.parse(localStorage.getItem("bakeryIndex"));
+let bakeryIndex = +localStorage.getItem("bakeryIndex");
+let bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
 addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("loginData") != null) {
     welcome.innerHTML = `مرحبا ${
@@ -14,9 +15,9 @@ addEventListener("DOMContentLoaded", () => {
     }`;
   }
 
-  if (localStorage.getItem("bakeryIndex") != null) {
-    owner.innerHTML = bakeryOwnerInfo.bakeryOwner;
-    address.innerHTML = `${bakeryOwnerInfo.address.bakeryCity} , ${bakeryOwnerInfo.address.bakeryVillage} ,${bakeryOwnerInfo.address.bakeryZone} بجوار ${bakeryOwnerInfo.nearbyPlace}`;
+  if (localStorage.getItem("bakeryData") != null) {
+    owner.innerHTML = bakeryData[bakeryIndex].bakeryOwner;
+    address.innerHTML = `${bakeryData[bakeryIndex].address.bakeryCity} , ${bakeryData[bakeryIndex].address.bakeryVillage} ,${bakeryData[bakeryIndex].address.bakeryZone} بجوار ${bakeryData[bakeryIndex].nearbyPlace}`;
   }
 
   setInterval(() => {
@@ -43,10 +44,14 @@ function bakeryOrder() {
     nameReq: localStorage.getItem("loginData"),
     num: count.value,
     timeOrder: time.value,
+    completed: false,
+    delay: false,
+    deleted: false,
   };
-  bakeryOwnerInfo.requsets.push(bakeryOrderObj);
 
-  localStorage.setItem("bakeryIndex", JSON.stringify(bakeryOwnerInfo));
+  bakeryData[bakeryIndex].reqests.push(bakeryOrderObj);
+
+  localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
 
   Swal.fire({
     position: "center-center",
@@ -55,4 +60,5 @@ function bakeryOrder() {
     showConfirmButton: false,
     timer: 1500,
   });
+  btn.disabled = true;
 }
