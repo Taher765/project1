@@ -4,6 +4,7 @@ const welcome = document.querySelector("#welcome span");
 // LOCAL STORAGE => Data Base
 let bakeryIndex = +localStorage.getItem("bakeryIndex");
 let bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
+
 addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("bakeryData") != null) {
     bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
@@ -16,9 +17,16 @@ function displayDate() {
   let content = "";
   if (bakeryData[bakeryIndex].reqests) {
     bakeryData[bakeryIndex].reqests.forEach((element, index) => {
+      const color = element.deleted
+        ? "red"
+        : element.completed
+        ? "green"
+        : element.delay
+        ? "orange"
+        : "transparent";
       content += `
 
-      <tr class="border">
+      <tr class="border" style="background:${color} !important">
       <td class="border">${index + 1}</td>
       <td class="border">${element.nameReq}</td>
       <td class="border">${element.num}</td>
@@ -42,30 +50,54 @@ function displayDate() {
   tableBody.innerHTML = content;
 }
 
-// // Delete Item
-// function deleteItem(index) {
-//   // userRequsets.requsets.splice(index, 1);
-//   userRequsets.requsets[index].deleted = true;
-//   userRequsets.requsets[index].completed = false;
-//   userRequsets.requsets[index].delay = false;
-
-//   localStorage.setItem("bakeryIndex", JSON.stringify(userRequsets));
-//   displayDate();
-// }
+// Delete Item
+function deleteItem(index) {
+  // bakeryData[bakeryIndex].reqests.splice(index, 1);
+  bakeryData[bakeryIndex].reqests[index].deleted = true;
+  bakeryData[bakeryIndex].reqests[index].completed = false;
+  bakeryData[bakeryIndex].reqests[index].delay = false;
+  localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
+  localStorage.setItem(
+    "Massege",
+    `تم رفض طلبكم من فضلك توجه الي مخبز اخر ${
+      bakeryData[bakeryIndex].reqests[index].nameReq +
+      " " +
+      bakeryData[bakeryIndex].reqests[index].num
+    } رغيف`
+  );
+  displayDate();
+}
 
 // // delay
-// function delayItem(index) {
-//   userRequsets.requsets[index].delay = true;
-//   userRequsets.requsets[index].completed = false;
-//   userRequsets.requsets[index].deleted = false;
-//   localStorage.setItem("bakeryIndex", JSON.stringify(userRequsets));
-//   displayDate();
-// }
+function delayItem(index) {
+  bakeryData[bakeryIndex].reqests[index].delay = true;
+  bakeryData[bakeryIndex].reqests[index].completed = false;
+  bakeryData[bakeryIndex].reqests[index].deleted = false;
+  localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
+  localStorage.setItem(
+    "Massege",
+    `تم تأخر طلبكم 20 دقيقه ${
+      bakeryData[bakeryIndex].reqests[index].nameReq +
+      " " +
+      bakeryData[bakeryIndex].reqests[index].num
+    } رغيف`
+  );
+  displayDate();
+}
 
-// function acceptedItem(index) {
-//   userRequsets.requsets[index].completed = true;
-//   userRequsets.requsets[index].delay = false;
-//   userRequsets.requsets[index].deleted = false;
-//   localStorage.setItem("bakeryIndex", JSON.stringify(userRequsets));
-//   displayDate();
-// }
+// Accepted Item
+function acceptedItem(index) {
+  bakeryData[bakeryIndex].reqests[index].completed = true;
+  bakeryData[bakeryIndex].reqests[index].delay = false;
+  bakeryData[bakeryIndex].reqests[index].deleted = false;
+  localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
+  localStorage.setItem(
+    "Massege",
+    `من فضلك توجع الي المخبز لاستلام الطلب الخاص بك ${
+      bakeryData[bakeryIndex].reqests[index].nameReq +
+      " " +
+      bakeryData[bakeryIndex].reqests[index].num
+    } رغيف`
+  );
+  displayDate();
+}

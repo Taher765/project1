@@ -43,24 +43,23 @@ body {
 .navbar-section nav .welcome {
   width: 20%;
 }
-.navbar-section nav .logo{
+.navbar-section nav .logo {
   width: 100px;
 }
 .navbar-section nav .logo img{
   width: 100%;
 }
 
-
 .navbar-section nav .btn-logout {
   transform: rotate(180deg);
   font-size: 25px;
   color: #fff;
-  cursor: pointer;
   transition: .1s;
   width: 20%;
 }
 
 .navbar-section nav .btn-logout:hover a{
+  cursor: pointer;
   color: var(--gold-color)
 } 
 
@@ -87,8 +86,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-justify-content: center;
-transition: .75s;
+  justify-content: center;
+  transition: .75s;
 }
 
 .loading .load {
@@ -103,11 +102,6 @@ transition: .75s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
-
-
-
-
-
 
 .decoration:after,
 .decoration::before {
@@ -152,5 +146,5 @@ transition: .75s;
 a {
   color: #fff;
   text-decoration: none;
-
 }
+

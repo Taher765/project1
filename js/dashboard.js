@@ -3,7 +3,6 @@ let village = document.getElementById("village");
 let areaZone = document.getElementById("areaZone");
 let next = document.getElementById("next");
 let bakerySection = document.getElementById("bakery-section");
-
 let welcomeMessege = document.querySelector(".welcome span");
 let btnLogout = document.getElementById("btnLogout");
 let bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
