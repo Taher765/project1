@@ -11,6 +11,9 @@ let bakeryData = JSON.parse(localStorage.getItem("bakeryData"));
 let massegeReq = "";
 
 addEventListener("DOMContentLoaded", () => {
+  // validation inputs Request
+  inputValid();
+  // Check Local Storge
   if (localStorage.getItem("loginData") != null) {
     welcome.innerHTML = `مرحبا ${
       localStorage.getItem("loginData").split(" ")[0]
@@ -36,6 +39,7 @@ addEventListener("DOMContentLoaded", () => {
       }
     });
   }
+
   // Stata Bakery
   setInterval(() => {
     const date = new Date();
@@ -54,6 +58,17 @@ addEventListener("DOMContentLoaded", () => {
     }
   }, 1000);
 });
+
+// validation
+count.addEventListener("keyup", inputValid);
+time.addEventListener("change", inputValid);
+function inputValid() {
+  if (count.value > 5 && time.value != "") {
+    btn.disabled = false;
+  } else {
+    btn.disabled = true;
+  }
+}
 
 btn.addEventListener("click", bakeryOrder);
 function bakeryOrder(e) {
@@ -81,22 +96,3 @@ function bakeryOrder(e) {
   btn.style.cursor = "no-drop";
   btn.disabled = true;
 }
-
-// حاله الطلب
-// function orderStatus() {
-//   for (let i = 0; i < bakeryData[bakeryIndex].reqests.length; i++) {
-//     if (
-//       bakeryData[bakeryIndex].reqests.nameReq ==
-//       localStorage.getItem("loginData")
-//     ) {
-//       if (bakeryData[bakeryIndex].reqests[i].completed) {
-//         massegeReq = "قبول";
-//       } else if (bakeryData[bakeryIndex].reqests[i].delay) {
-//         massegeReq = "تأخير";
-//       } else if (bakeryData[bakeryIndex].reqests[i].deleted) {
-//         massegeReq = "مسح";
-//       }
-//     }
-//   }
-//   console.log(massegeReq);
-// }

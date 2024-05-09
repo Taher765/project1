@@ -49,7 +49,6 @@ function displayDate() {
 
   tableBody.innerHTML = content;
 }
-
 // Delete Item
 function deleteItem(index) {
   // bakeryData[bakeryIndex].reqests.splice(index, 1);
@@ -59,11 +58,7 @@ function deleteItem(index) {
   localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
   localStorage.setItem(
     "Massege",
-    `تم رفض طلبكم من فضلك توجه الي مخبز اخر ${
-      bakeryData[bakeryIndex].reqests[index].nameReq +
-      " " +
-      bakeryData[bakeryIndex].reqests[index].num
-    } رغيف`
+    `تم رفض طلبكم وهو ${bakeryData[bakeryIndex].reqests[index].num} رغيف , من فضلك توجه الي مخبز اخر`
   );
   displayDate();
 }
@@ -76,14 +71,12 @@ function delayItem(index) {
   localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
   localStorage.setItem(
     "Massege",
-    `تم تأخر طلبكم 20 دقيقه ${
-      bakeryData[bakeryIndex].reqests[index].nameReq +
-      " " +
-      bakeryData[bakeryIndex].reqests[index].num
-    } رغيف`
+    `تم تأجيل طلبكم وهو ${bakeryData[bakeryIndex].reqests[index].num} رغيف لمدة 20 دقيقة بسبب كثره الطلبات في الوقت المحدد`
   );
   displayDate();
 }
+// Price
+let x = 5;
 
 // Accepted Item
 function acceptedItem(index) {
@@ -93,11 +86,11 @@ function acceptedItem(index) {
   localStorage.setItem("bakeryData", JSON.stringify(bakeryData));
   localStorage.setItem(
     "Massege",
-    `من فضلك توجع الي المخبز لاستلام الطلب الخاص بك ${
-      bakeryData[bakeryIndex].reqests[index].nameReq +
-      " " +
+    ` من فضلك توجه الي المخبز لاستلام الطلب الخاص بك وهو ${
       bakeryData[bakeryIndex].reqests[index].num
-    } رغيف`
+    } رغيف و دفع مبلغ ${
+      (x * bakeryData[bakeryIndex].reqests[index].num) / 100
+    }  جنيه عند الاستلام `
   );
   displayDate();
 }
